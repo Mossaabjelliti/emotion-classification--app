@@ -1,6 +1,10 @@
-flask==2.3.2
-torch==2.0.1
-transformers==4.31.0
-pandas==2.0.3
-numpy==1.25.2
-gunicorn==20.1.0
+flask
+torch
+transformers
+pandas
+numpy
+gunicorn
+werkzeug
+scikit-learn
+pyyaml
+flask-cors
