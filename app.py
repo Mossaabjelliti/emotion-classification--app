@@ -12,6 +12,9 @@ import threading
 import time
 import yaml
 import shutil
+import requests
+import zipfile
+import os
 from model import EmotionClassifier
 
 # Configure logging
@@ -66,6 +69,18 @@ if not os.path.exists(USERS_FILE):
             }
         }, f)
 
+model_dir = 'model/emotion_model'
+if not os.path.exists(model_dir):
+    model_url = "https://drive.google.com/uc?export=download&id=1HXYxtcE_wwP_MpmOrEbDKSF93eZAmMzC"
+    zip_path = 'model/emotion_model.zip'
+    os.makedirs('model', exist_ok=True)
+    with requests.get(model_url, stream=True) as r:
+        with open(zip_path, 'wb') as f:
+            for chunk in r.iter_content(chunk_size=8192):
+                f.write(chunk)
+    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+        zip_ref.extractall('model')
+    os.remove(zip_path)
 # Initialize the emotion classifier
 model = EmotionClassifier()
 

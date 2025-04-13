@@ -8,3 +8,4 @@ werkzeug
 scikit-learn
 pyyaml
 flask-cors
+requests
