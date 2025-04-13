@@ -71,8 +71,8 @@ if not os.path.exists(USERS_FILE):
 
 model_dir = 'model/emotion_model'
 if not os.path.exists(model_dir):
-    model_url = "https://drive.google.com/uc?export=download&id=1HXYxtcE_wwP_MpmOrEbDKSF93eZAmMzC"
-    zip_path = 'model/emotion_model.zip'
+    model_url = "https://www.dropbox.com/scl/fi/im2shgv0eo55tm0s6hypp/model.zip?rlkey=1zee8770jn22lza7un8enwhe6&st=eqclep31&dl=1"
+    zip_path = 'model/model.zip'
     os.makedirs('model', exist_ok=True)
     with requests.get(model_url, stream=True) as r:
         with open(zip_path, 'wb') as f:
@@ -498,4 +498,3 @@ if __name__ == '__main__':
     # Run the app
     port = int(os.environ.get('PORT', 5000))
     debug = config['app'].get('debug', False)
-    app.run(host='0.0.0.0', port=port, debug=debug)
