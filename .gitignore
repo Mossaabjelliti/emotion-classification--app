@@ -1,3 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+
+# Logs and local interaction data
+*.log
+interaction_log.csv
+users.json
+backups/
+
+# Generated model artifacts
 model/emotion_model/
-model/emotion_model/
-model/emotion_model/
+
+# Local environment
+.env
+.env.*
+!.env.example
